@@ -1,0 +1,59 @@
+# === GitClass 課題テンプレ 共通 .gitignore ===
+# 巨大ファイル・生データ・一時ファイルをリポジトリに入れないための設定。
+# 「コミットしたはずなのに反映されない」ときは、このファイルで除外されていないか確認。
+
+# --- OS・エディタのゴミ ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*~
+
+# --- 動画の生データ・完成書き出し（巨大になるため除外。提出方法は phase3-制作/README.md 参照）---
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.m4v
+# 編集プロジェクトの自動保存・キャッシュ
+*.prproj.tmp
+Adobe Premiere Pro Auto-Save/
+*.aep.tmp
+
+# --- 音声の生データ ---
+*.wav
+*.aiff
+*.flac
+
+# --- デザイン ---
+# 元データ（.psd / .ai / .fig / .xd）と書き出し PNG/JPG/SVG はコミット対象なので除外しない
+# ただし 50MB を超える元データはコミットせず phase3-制作/README.md の方法で提出
+
+# --- 3D の中間生成物（.blend / .scad 本体はコミット対象なので除外しない）---
+*.blend1
+*.blend2
+*.blend@
+# レンダーキャッシュ・ベイク結果
+/render_cache/
+*.exr
+
+# --- プログラミングの依存・ビルド生成物 ---
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- 圧縮ファイル（成果物は展開した状態でコミットする）---
+*.zip
+*.rar
+*.7z
+
+# --- 秘密情報（絶対にコミットしない）---
+.env
+*.pem
+*_key*
+credentials*.json
